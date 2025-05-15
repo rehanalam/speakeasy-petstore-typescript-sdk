@@ -4,6 +4,7 @@ sources:
     Swagger Petstore - OpenAPI 3.0:
         inputs:
             - location: ../api-spec/petstore.json
+            - location: https://raw.githubusercontent.com/rehanalam/speakeasy-petstore-spec/main/petstore.json
         overlays:
             - location: .speakeasy/speakeasy-modifications-overlay.yaml
         registry:
