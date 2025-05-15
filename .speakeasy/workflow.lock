@@ -1,0 +1,38 @@
+speakeasyVersion: 1.545.0
+sources:
+    Swagger Petstore - OpenAPI 3.0:
+        sourceNamespace: swagger-petstore---open-api-3-0
+        sourceRevisionDigest: sha256:829b62c253ff7ed3cddf21a93cc4cc3183c82d409f627597ffc7ce8ab3cd9942
+        sourceBlobDigest: sha256:85b75f8a43b7ef345793622a791f8d9920460762090c6c19e302186f1f2410b0
+        tags:
+            - latest
+            - 1.0.26
+targets:
+    petstore:
+        source: Swagger Petstore - OpenAPI 3.0
+        sourceNamespace: swagger-petstore---open-api-3-0
+        sourceRevisionDigest: sha256:829b62c253ff7ed3cddf21a93cc4cc3183c82d409f627597ffc7ce8ab3cd9942
+        sourceBlobDigest: sha256:85b75f8a43b7ef345793622a791f8d9920460762090c6c19e302186f1f2410b0
+        codeSamplesNamespace: swagger-petstore---open-api-3-0-typescript-code-samples
+        codeSamplesRevisionDigest: sha256:c92ba33286b8ab76e8f99e2114d8620bcb8590784ee4cd64eac033bf34981aa6
+workflow:
+    workflowVersion: 1.0.0
+    speakeasyVersion: latest
+    sources:
+        Swagger Petstore - OpenAPI 3.0:
+            inputs:
+                - location: ../api-spec/petstore.json
+            overlays:
+                - location: .speakeasy/speakeasy-modifications-overlay.yaml
+            registry:
+                location: registry.speakeasyapi.dev/rehan-co/weather-api/swagger-petstore---open-api-3-0
+    targets:
+        petstore:
+            target: typescript
+            source: Swagger Petstore - OpenAPI 3.0
+            codeSamples:
+                registry:
+                    location: registry.speakeasyapi.dev/rehan-co/weather-api/swagger-petstore---open-api-3-0-typescript-code-samples
+                labelOverride:
+                    fixedValue: Typescript (SDK)
+                blocking: false

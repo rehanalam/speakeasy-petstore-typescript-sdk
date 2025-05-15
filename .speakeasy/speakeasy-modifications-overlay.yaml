@@ -1,0 +1,190 @@
+overlay: 1.0.0
+x-speakeasy-jsonpath: rfc9535
+info:
+  title: Speakeasy Modifications
+  version: 0.0.2
+  x-speakeasy-metadata:
+    after: ""
+    before: ""
+    type: speakeasy-modifications
+actions:
+  - target: $["paths"]["/pet/{petId}"]["get"]
+    update:
+      x-speakeasy-group: pets
+      x-speakeasy-name-override: getById
+    x-speakeasy-metadata:
+      after: sdk.pets.getById()
+      before: sdk.pet.getPetById()
+      created_at: 1747313660755
+      reviewed_at: 1747313665223
+      type: method-name
+  - target: $["paths"]["/pet/{petId}/uploadImage"]["post"]
+    update:
+      x-speakeasy-group: pets
+      x-speakeasy-name-override: uploadImage
+    x-speakeasy-metadata:
+      after: sdk.pets.uploadImage()
+      before: sdk.pet.uploadFile()
+      created_at: 1747313660755
+      reviewed_at: 1747313665223
+      type: method-name
+  - target: $["paths"]["/pet"]["put"]
+    update:
+      x-speakeasy-group: pets
+      x-speakeasy-name-override: update
+    x-speakeasy-metadata:
+      after: sdk.pets.update()
+      before: sdk.pet.updatePet()
+      created_at: 1747313660755
+      reviewed_at: 1747313665223
+      type: method-name
+  - target: $["paths"]["/store/order/{orderId}"]["get"]
+    update:
+      x-speakeasy-group: orders
+      x-speakeasy-name-override: getById
+    x-speakeasy-metadata:
+      after: sdk.orders.getById()
+      before: sdk.store.getOrderById()
+      created_at: 1747313660755
+      reviewed_at: 1747313665223
+      type: method-name
+  - target: $["paths"]["/user/login"]["get"]
+    update:
+      x-speakeasy-group: users
+      x-speakeasy-name-override: login
+    x-speakeasy-metadata:
+      after: sdk.users.login()
+      before: sdk.user.loginUser()
+      created_at: 1747313660755
+      reviewed_at: 1747313665223
+      type: method-name
+  - target: $["paths"]["/pet/{petId}"]["post"]
+    update:
+      x-speakeasy-group: pets
+      x-speakeasy-name-override: updateWithForm
+    x-speakeasy-metadata:
+      after: sdk.pets.updateWithForm()
+      before: sdk.pet.updatePetWithForm()
+      created_at: 1747313660755
+      reviewed_at: 1747313665223
+      type: method-name
+  - target: $["paths"]["/pet/findByTags"]["get"]
+    update:
+      x-speakeasy-group: pets
+      x-speakeasy-name-override: findByTags
+    x-speakeasy-metadata:
+      after: sdk.pets.findByTags()
+      before: sdk.pet.findPetsByTags()
+      created_at: 1747313660755
+      reviewed_at: 1747313665223
+      type: method-name
+  - target: $["paths"]["/user/{username}"]["delete"]
+    update:
+      x-speakeasy-group: users
+      x-speakeasy-name-override: delete
+    x-speakeasy-metadata:
+      after: sdk.users.delete()
+      before: sdk.user.deleteUser()
+      created_at: 1747313660755
+      reviewed_at: 1747313665223
+      type: method-name
+  - target: $["paths"]["/user/{username}"]["get"]
+    update:
+      x-speakeasy-group: users
+      x-speakeasy-name-override: getByName
+    x-speakeasy-metadata:
+      after: sdk.users.getByName()
+      before: sdk.user.getUserByName()
+      created_at: 1747313660755
+      reviewed_at: 1747313665223
+      type: method-name
+  - target: $["paths"]["/user/logout"]["get"]
+    update:
+      x-speakeasy-group: users
+      x-speakeasy-name-override: logout
+    x-speakeasy-metadata:
+      after: sdk.users.logout()
+      before: sdk.user.logoutUser()
+      created_at: 1747313660755
+      reviewed_at: 1747313665223
+      type: method-name
+  - target: $["paths"]["/pet"]["post"]
+    update:
+      x-speakeasy-group: pets
+      x-speakeasy-name-override: add
+    x-speakeasy-metadata:
+      after: sdk.pets.add()
+      before: sdk.pet.addPet()
+      created_at: 1747313660755
+      reviewed_at: 1747313665223
+      type: method-name
+  - target: $["paths"]["/user/{username}"]["put"]
+    update:
+      x-speakeasy-group: users
+      x-speakeasy-name-override: update
+    x-speakeasy-metadata:
+      after: sdk.users.update()
+      before: sdk.user.updateUser()
+      created_at: 1747313660755
+      reviewed_at: 1747313665223
+      type: method-name
+  - target: $["paths"]["/store/order/{orderId}"]["delete"]
+    update:
+      x-speakeasy-group: orders
+      x-speakeasy-name-override: delete
+    x-speakeasy-metadata:
+      after: sdk.orders.delete()
+      before: sdk.store.deleteOrder()
+      created_at: 1747313660755
+      reviewed_at: 1747313665223
+      type: method-name
+  - target: $["paths"]["/user"]["post"]
+    update:
+      x-speakeasy-group: users
+      x-speakeasy-name-override: create
+    x-speakeasy-metadata:
+      after: sdk.users.create()
+      before: sdk.user.createUser()
+      created_at: 1747313660755
+      reviewed_at: 1747313665223
+      type: method-name
+  - target: $["paths"]["/pet/{petId}"]["delete"]
+    update:
+      x-speakeasy-group: pets
+      x-speakeasy-name-override: delete
+    x-speakeasy-metadata:
+      after: sdk.pets.delete()
+      before: sdk.pet.deletePet()
+      created_at: 1747313660755
+      reviewed_at: 1747313665223
+      type: method-name
+  - target: $["paths"]["/user/createWithList"]["post"]
+    update:
+      x-speakeasy-group: users
+      x-speakeasy-name-override: createFromList
+    x-speakeasy-metadata:
+      after: sdk.users.createFromList()
+      before: sdk.user.createUsersWithListInput()
+      created_at: 1747313660755
+      reviewed_at: 1747313665223
+      type: method-name
+  - target: $["paths"]["/pet/findByStatus"]["get"]
+    update:
+      x-speakeasy-group: pets
+      x-speakeasy-name-override: findByStatus
+    x-speakeasy-metadata:
+      after: sdk.pets.findByStatus()
+      before: sdk.pet.findPetsByStatus()
+      created_at: 1747313660755
+      reviewed_at: 1747313665223
+      type: method-name
+  - target: $["paths"]["/store/order"]["post"]
+    update:
+      x-speakeasy-group: orders
+      x-speakeasy-name-override: place
+    x-speakeasy-metadata:
+      after: sdk.orders.place()
+      before: sdk.store.placeOrder()
+      created_at: 1747313660755
+      reviewed_at: 1747313665223
+      type: method-name

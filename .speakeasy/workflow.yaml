@@ -1,0 +1,20 @@
+workflowVersion: 1.0.0
+speakeasyVersion: latest
+sources:
+    Swagger Petstore - OpenAPI 3.0:
+        inputs:
+            - location: ../api-spec/petstore.json
+        overlays:
+            - location: .speakeasy/speakeasy-modifications-overlay.yaml
+        registry:
+            location: registry.speakeasyapi.dev/rehan-co/weather-api/swagger-petstore---open-api-3-0
+targets:
+    petstore:
+        target: typescript
+        source: Swagger Petstore - OpenAPI 3.0
+        codeSamples:
+            registry:
+                location: registry.speakeasyapi.dev/rehan-co/weather-api/swagger-petstore---open-api-3-0-typescript-code-samples
+            labelOverride:
+                fixedValue: Typescript (SDK)
+            blocking: false
