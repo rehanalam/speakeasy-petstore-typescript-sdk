@@ -17,7 +17,7 @@ Developer-friendly & type-safe Typescript SDK specifically catered to leverage *
 <!-- Start Summary [summary] -->
 ## Summary
 
-Git  2 Updated Swagger Petstore - OpenAPI 4.0: This is a sample Pet Store Server based on the OpenAPI 3.0 specification.  You can find out more about
+old Swagger Petstore - OpenAPI 4.0: This is a sample Pet Store Server based on the OpenAPI 3.0 specification.  You can find out more about
 Swagger at [https://swagger.io](https://swagger.io). In the third iteration of the pet store, we've switched to the design first approach!
 You can now help us improve the API whether it's by making changes to the definition itself or to the code.
 That way, with time, we can improve the API in general, and expose some of the new features in OAS3.
@@ -62,25 +62,25 @@ The SDK can be installed with either [npm](https://www.npmjs.com/), [pnpm](https
 ### NPM
 
 ```bash
-npm add <UNSET>
+npm add https://github.com/rehanalam/speakeasy-petstore-typescript-sdk
 ```
 
 ### PNPM
 
 ```bash
-pnpm add <UNSET>
+pnpm add https://github.com/rehanalam/speakeasy-petstore-typescript-sdk
 ```
 
 ### Bun
 
 ```bash
-bun add <UNSET>
+bun add https://github.com/rehanalam/speakeasy-petstore-typescript-sdk
 ```
 
 ### Yarn
 
 ```bash
-yarn add <UNSET> zod
+yarn add https://github.com/rehanalam/speakeasy-petstore-typescript-sdk zod
 
 # Note that Yarn does not install peer dependencies automatically. You will need
 # to install zod as shown above.
@@ -204,8 +204,7 @@ async function run() {
       name: "Dogs",
     },
     photoUrls: [
-      "<value>",
-      "<value>",
+      "<value 1>",
     ],
   });
 
@@ -247,8 +246,7 @@ async function run() {
       name: "Dogs",
     },
     photoUrls: [
-      "<value>",
-      "<value>",
+      "<value 1>",
     ],
   });
 
@@ -272,7 +270,7 @@ const petstore = new Petstore({
 
 async function run() {
   const result = await petstore.pets.getById({}, {
-    petId: 504151,
+    petId: 311674,
   });
 
   // Handle the result
@@ -407,7 +405,7 @@ const petstore = new Petstore({
 
 async function run() {
   const result = await petstore.pets.updateRaw(
-    bytesToStream(new TextEncoder().encode("0x963D8BbFe6")),
+    bytesToStream(new TextEncoder().encode("0x8359625Dfb")),
   );
 
   // Handle the result
@@ -442,8 +440,7 @@ async function run() {
       name: "Dogs",
     },
     photoUrls: [
-      "<value>",
-      "<value>",
+      "<value 1>",
     ],
   }, {
     retries: {
@@ -494,8 +491,7 @@ async function run() {
       name: "Dogs",
     },
     photoUrls: [
-      "<value>",
-      "<value>",
+      "<value 1>",
     ],
   });
 
@@ -537,8 +533,7 @@ async function run() {
         name: "Dogs",
       },
       photoUrls: [
-        "<value>",
-        "<value>",
+        "<value 1>",
       ],
     });
 

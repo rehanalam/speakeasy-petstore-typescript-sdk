@@ -41,8 +41,7 @@ async function run() {
       name: "Dogs",
     },
     photoUrls: [
-      "<value>",
-      "<value>",
+      "<value 1>",
     ],
   });
 
@@ -77,8 +76,7 @@ async function run() {
       name: "Dogs",
     },
     photoUrls: [
-      "<value>",
-      "<value>",
+      "<value 1>",
     ],
   });
 
@@ -129,7 +127,7 @@ const petstore = new Petstore({
 });
 
 async function run() {
-  const result = await petstore.pets.updateRaw(bytesToStream(new TextEncoder().encode("0x963D8BbFe6")));
+  const result = await petstore.pets.updateRaw(bytesToStream(new TextEncoder().encode("0x8359625Dfb")));
 
   // Handle the result
   console.log(result);
@@ -154,7 +152,7 @@ const petstore = new PetstoreCore({
 });
 
 async function run() {
-  const res = await petsUpdateRaw(petstore, bytesToStream(new TextEncoder().encode("0x3A8bE2FCf6")));
+  const res = await petsUpdateRaw(petstore, bytesToStream(new TextEncoder().encode("0x4fB0F8ce78")));
 
   if (!res.ok) {
     throw res.error;
@@ -211,8 +209,7 @@ async function run() {
       name: "Dogs",
     },
     photoUrls: [
-      "<value>",
-      "<value>",
+      "<value 1>",
     ],
   });
 
@@ -247,8 +244,7 @@ async function run() {
       name: "Dogs",
     },
     photoUrls: [
-      "<value>",
-      "<value>",
+      "<value 1>",
     ],
   });
 
@@ -307,7 +303,9 @@ async function run() {
       name: "Dogs",
     },
     photoUrls: [
-      "<value>",
+      "<value 1>",
+      "<value 2>",
+      "<value 3>",
     ],
   });
 
@@ -342,7 +340,9 @@ async function run() {
       name: "Dogs",
     },
     photoUrls: [
-      "<value>",
+      "<value 1>",
+      "<value 2>",
+      "<value 3>",
     ],
   });
 
@@ -393,7 +393,7 @@ const petstore = new Petstore({
 });
 
 async function run() {
-  const result = await petstore.pets.addRaw(bytesToStream(new TextEncoder().encode("0x9Bcde4dcEA")));
+  const result = await petstore.pets.addRaw(bytesToStream(new TextEncoder().encode("0xE8DAbC9D9F")));
 
   // Handle the result
   console.log(result);
@@ -418,7 +418,7 @@ const petstore = new PetstoreCore({
 });
 
 async function run() {
-  const res = await petsAddRaw(petstore, bytesToStream(new TextEncoder().encode("0xE27ec5de5c")));
+  const res = await petsAddRaw(petstore, bytesToStream(new TextEncoder().encode("0xFFb93bfD76")));
 
   if (!res.ok) {
     throw res.error;
@@ -475,7 +475,9 @@ async function run() {
       name: "Dogs",
     },
     photoUrls: [
-      "<value>",
+      "<value 1>",
+      "<value 2>",
+      "<value 3>",
     ],
   });
 
@@ -510,7 +512,9 @@ async function run() {
       name: "Dogs",
     },
     photoUrls: [
-      "<value>",
+      "<value 1>",
+      "<value 2>",
+      "<value 3>",
     ],
   });
 
@@ -711,7 +715,7 @@ async function run() {
   const result = await petstore.pets.getById({
     apiKey: process.env["PETSTORE_API_KEY"] ?? "",
   }, {
-    petId: 504151,
+    petId: 311674,
   });
 
   // Handle the result
@@ -739,7 +743,7 @@ async function run() {
   const res = await petsGetById(petstore, {
     apiKey: process.env["PETSTORE_API_KEY"] ?? "",
   }, {
-    petId: 504151,
+    petId: 311674,
   });
 
   if (!res.ok) {
@@ -791,7 +795,7 @@ const petstore = new Petstore({
 
 async function run() {
   const result = await petstore.pets.updateWithForm({
-    petId: 303241,
+    petId: 509712,
   });
 
   // Handle the result
@@ -818,7 +822,7 @@ const petstore = new PetstoreCore({
 
 async function run() {
   const res = await petsUpdateWithForm(petstore, {
-    petId: 303241,
+    petId: 509712,
   });
 
   if (!res.ok) {
@@ -869,7 +873,7 @@ const petstore = new Petstore({
 
 async function run() {
   await petstore.pets.delete({
-    petId: 441876,
+    petId: 818965,
   });
 
 
@@ -895,7 +899,7 @@ const petstore = new PetstoreCore({
 
 async function run() {
   const res = await petsDelete(petstore, {
-    petId: 441876,
+    petId: 818965,
   });
 
   if (!res.ok) {
@@ -945,7 +949,7 @@ const petstore = new Petstore({
 
 async function run() {
   const result = await petstore.pets.uploadImage({
-    petId: 565380,
+    petId: 150516,
   });
 
   // Handle the result
@@ -972,7 +976,7 @@ const petstore = new PetstoreCore({
 
 async function run() {
   const res = await petsUploadImage(petstore, {
-    petId: 565380,
+    petId: 150516,
   });
 
   if (!res.ok) {
