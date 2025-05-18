@@ -51,7 +51,7 @@ export function createMCPServer(deps: {
 }) {
   const server = new McpServer({
     name: "Petstore",
-    version: "0.1.5",
+    version: "0.1.6",
   });
 
   const client = new PetstoreCore({
