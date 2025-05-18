@@ -1,0 +1,16 @@
+# .github/workflows/trigger-reusable-sdk-generation.yml
+name: Trigger Reusable SDK Generation
+
+on:
+  repository_dispatch:
+    types: [trigger-sdk-generation]
+
+jobs:
+  call-generator:
+    uses: ./.github/workflows/generate.yml
+    with:
+      force: true
+      set_version: ''
+    secrets:
+      github_access_token: ${{ secrets.GITHUB_TOKEN }}
+      speakeasy_api_key: ${{ secrets.SPEAKEASY_API_KEY }}
