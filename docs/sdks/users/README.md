@@ -124,7 +124,7 @@ const petstore = new Petstore({
 });
 
 async function run() {
-  const result = await petstore.users.createRaw(bytesToStream(new TextEncoder().encode("0x6f39dACC0a")));
+  const result = await petstore.users.createRaw(bytesToStream(new TextEncoder().encode("0x400A6EF4FE")));
 
   // Handle the result
   console.log(result);
@@ -149,7 +149,7 @@ const petstore = new PetstoreCore({
 });
 
 async function run() {
-  const res = await usersCreateRaw(petstore, bytesToStream(new TextEncoder().encode("0x9Ddb88478b")));
+  const res = await usersCreateRaw(petstore, bytesToStream(new TextEncoder().encode("0x372Cd02E61")));
 
   if (!res.ok) {
     throw res.error;
@@ -301,6 +301,26 @@ async function run() {
       phone: "12345",
       userStatus: 1,
     },
+    {
+      id: 10,
+      username: "theUser",
+      firstName: "John",
+      lastName: "James",
+      email: "john@email.com",
+      password: "12345",
+      phone: "12345",
+      userStatus: 1,
+    },
+    {
+      id: 10,
+      username: "theUser",
+      firstName: "John",
+      lastName: "James",
+      email: "john@email.com",
+      password: "12345",
+      phone: "12345",
+      userStatus: 1,
+    },
   ]);
 
   // Handle the result
@@ -327,6 +347,26 @@ const petstore = new PetstoreCore({
 
 async function run() {
   const res = await usersCreateFromList(petstore, [
+    {
+      id: 10,
+      username: "theUser",
+      firstName: "John",
+      lastName: "James",
+      email: "john@email.com",
+      password: "12345",
+      phone: "12345",
+      userStatus: 1,
+    },
+    {
+      id: 10,
+      username: "theUser",
+      firstName: "John",
+      lastName: "James",
+      email: "john@email.com",
+      password: "12345",
+      phone: "12345",
+      userStatus: 1,
+    },
     {
       id: 10,
       username: "theUser",
@@ -532,7 +572,7 @@ const petstore = new Petstore({
 
 async function run() {
   const result = await petstore.users.getByName({
-    username: "Zachery_Lubowitz15",
+    username: "Edyth10",
   });
 
   // Handle the result
@@ -559,7 +599,7 @@ const petstore = new PetstoreCore({
 
 async function run() {
   const res = await usersGetByName(petstore, {
-    username: "Zachery_Lubowitz15",
+    username: "Edyth10",
   });
 
   if (!res.ok) {
@@ -610,7 +650,7 @@ const petstore = new Petstore({
 
 async function run() {
   await petstore.users.update({
-    username: "Dandre_Hand41",
+    username: "Alison.Cassin",
     user: {
       id: 10,
       username: "theUser",
@@ -646,7 +686,7 @@ const petstore = new PetstoreCore({
 
 async function run() {
   const res = await usersUpdate(petstore, {
-    username: "Dandre_Hand41",
+    username: "Alison.Cassin",
     user: {
       id: 10,
       username: "theUser",
@@ -706,8 +746,8 @@ const petstore = new Petstore({
 
 async function run() {
   await petstore.users.updateRaw({
-    username: "Dandre_Hand41",
-    user: bytesToStream(new TextEncoder().encode("0x963D8BbFe6")),
+    username: "Alison.Cassin",
+    user: bytesToStream(new TextEncoder().encode("0x0b25377dFA")),
   });
 
 
@@ -733,8 +773,8 @@ const petstore = new PetstoreCore({
 
 async function run() {
   const res = await usersUpdateRaw(petstore, {
-    username: "Dandre_Hand41",
-    user: bytesToStream(new TextEncoder().encode("0x3A8bE2FCf6")),
+    username: "Alison.Cassin",
+    user: bytesToStream(new TextEncoder().encode("0xcFa21b55fb")),
   });
 
   if (!res.ok) {
@@ -784,7 +824,7 @@ const petstore = new Petstore({
 
 async function run() {
   await petstore.users.updateForm({
-    username: "Dandre_Hand41",
+    username: "Alison.Cassin",
     user: {
       id: 10,
       username: "theUser",
@@ -820,7 +860,7 @@ const petstore = new PetstoreCore({
 
 async function run() {
   const res = await usersUpdateForm(petstore, {
-    username: "Dandre_Hand41",
+    username: "Alison.Cassin",
     user: {
       id: 10,
       username: "theUser",
@@ -880,7 +920,7 @@ const petstore = new Petstore({
 
 async function run() {
   await petstore.users.delete({
-    username: "Demetris_Schmitt",
+    username: "Rita_Schuppe",
   });
 
 
@@ -906,7 +946,7 @@ const petstore = new PetstoreCore({
 
 async function run() {
   const res = await usersDelete(petstore, {
-    username: "Demetris_Schmitt",
+    username: "Rita_Schuppe",
   });
 
   if (!res.ok) {
