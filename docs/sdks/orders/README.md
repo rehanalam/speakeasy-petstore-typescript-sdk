@@ -110,7 +110,7 @@ const petstore = new Petstore({
 });
 
 async function run() {
-  const result = await petstore.orders.placeRaw(bytesToStream(new TextEncoder().encode("0x0a2dAedbC0")));
+  const result = await petstore.orders.placeRaw(bytesToStream(new TextEncoder().encode("0x45eC5A0D9E")));
 
   // Handle the result
   console.log(result);
@@ -135,7 +135,7 @@ const petstore = new PetstoreCore({
 });
 
 async function run() {
-  const res = await ordersPlaceRaw(petstore, bytesToStream(new TextEncoder().encode("0x8Ead343baF")));
+  const res = await ordersPlaceRaw(petstore, bytesToStream(new TextEncoder().encode("0x06B99d7206")));
 
   if (!res.ok) {
     throw res.error;
@@ -269,7 +269,7 @@ const petstore = new Petstore({
 
 async function run() {
   const result = await petstore.orders.getById({
-    orderId: 614993,
+    orderId: 728529,
   });
 
   // Handle the result
@@ -296,7 +296,7 @@ const petstore = new PetstoreCore({
 
 async function run() {
   const res = await ordersGetById(petstore, {
-    orderId: 614993,
+    orderId: 728529,
   });
 
   if (!res.ok) {
@@ -347,7 +347,7 @@ const petstore = new Petstore({
 
 async function run() {
   await petstore.orders.delete({
-    orderId: 127902,
+    orderId: 690575,
   });
 
 
@@ -373,7 +373,7 @@ const petstore = new PetstoreCore({
 
 async function run() {
   const res = await ordersDelete(petstore, {
-    orderId: 127902,
+    orderId: 690575,
   });
 
   if (!res.ok) {

@@ -1,18 +1,20 @@
 lockVersion: 2.0.0
 id: 507eea1e-404e-4394-a27b-45491b412b02
 management:
-  docChecksum: 92ca8caf310f76ef463ec5be86fb5611
+  docChecksum: aa4343909131464e06579cb79d623f0e
   docVersion: 1.0.26
-  speakeasyVersion: 1.545.0
-  generationVersion: 2.599.0
-  releaseVersion: 0.1.5
-  configChecksum: a288db8f67a09459237b49d73b667852
+  speakeasyVersion: 1.546.2
+  generationVersion: 2.604.4
+  releaseVersion: 0.1.6
+  configChecksum: db4bdc90d8626d5fc22245e29aae20fb
+  repoURL: https://github.com/rehanalam/speakeasy-petstore-typescript-sdk.git
+  installationURL: https://github.com/rehanalam/speakeasy-petstore-typescript-sdk
 features:
   typescript:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.1.11
-    core: 3.21.7
+    core: 3.21.8
     defaultEnabledRetries: 0.1.0
     devContainers: 2.90.0
     enumUnions: 0.1.0
@@ -239,47 +241,47 @@ examples:
   updatePet:
     speakeasy-default-update-pet:
       requestBody:
-        application/json: {"id": 10, "name": "doggie", "category": {"id": 1, "name": "Dogs"}, "photoUrls": ["<value>", "<value>"]}
+        application/json: {"id": 10, "name": "doggie", "category": {"id": 1, "name": "Dogs"}, "photoUrls": ["<value 1>"]}
       responses:
         "200":
-          application/json: {"id": 10, "name": "doggie", "category": {"id": 1, "name": "Dogs"}, "photoUrls": ["<value>"]}
-          application/xml: "0xBba15B6282"
+          application/json: {"id": 10, "name": "doggie", "category": {"id": 1, "name": "Dogs"}, "photoUrls": []}
+          application/xml: "0x59625Dfbb1"
     speakeasy-default-update-pet-raw:
       requestBody:
         application/xml: "x-file: example.file"
       responses:
         "200":
-          application/json: {"id": 10, "name": "doggie", "category": {"id": 1, "name": "Dogs"}, "photoUrls": ["<value>"]}
-          application/xml: "0xC7D6C5f13E"
+          application/json: {"id": 10, "name": "doggie", "category": {"id": 1, "name": "Dogs"}, "photoUrls": []}
+          application/xml: "0x8359625Dfb"
     speakeasy-default-update-pet-form:
       requestBody:
-        application/x-www-form-urlencoded: {"id": 10, "name": "doggie", "category": {"id": 1, "name": "Dogs"}, "photoUrls": ["<value>", "<value>"]}
+        application/x-www-form-urlencoded: {"id": 10, "name": "doggie", "category": {"id": 1, "name": "Dogs"}, "photoUrls": ["<value 1>"]}
       responses:
         "200":
-          application/json: {"id": 10, "name": "doggie", "category": {"id": 1, "name": "Dogs"}, "photoUrls": ["<value>"]}
-          application/xml: "0xBEcfd4dDfC"
+          application/json: {"id": 10, "name": "doggie", "category": {"id": 1, "name": "Dogs"}, "photoUrls": []}
+          application/xml: "0x8359625Dfb"
   addPet:
     speakeasy-default-add-pet:
       requestBody:
-        application/json: {"id": 10, "name": "doggie", "category": {"id": 1, "name": "Dogs"}, "photoUrls": ["<value>"]}
+        application/json: {"id": 10, "name": "doggie", "category": {"id": 1, "name": "Dogs"}, "photoUrls": ["<value 1>", "<value 2>", "<value 3>"]}
       responses:
         "200":
-          application/json: {"id": 10, "name": "doggie", "category": {"id": 1, "name": "Dogs"}, "photoUrls": ["<value>"]}
-          application/xml: "0x0BEC232f2C"
+          application/json: {"id": 10, "name": "doggie", "category": {"id": 1, "name": "Dogs"}, "photoUrls": ["<value 1>"]}
+          application/xml: "0xDAbC9D9FAC"
     speakeasy-default-add-pet-raw:
       requestBody:
         application/xml: "x-file: example.file"
       responses:
         "200":
-          application/json: {"id": 10, "name": "doggie", "category": {"id": 1, "name": "Dogs"}, "photoUrls": ["<value>", "<value>"]}
-          application/xml: "0x58Cd683A3e"
+          application/json: {"id": 10, "name": "doggie", "category": {"id": 1, "name": "Dogs"}, "photoUrls": ["<value 1>"]}
+          application/xml: "0xE8DAbC9D9F"
     speakeasy-default-add-pet-form:
       requestBody:
-        application/x-www-form-urlencoded: {"id": 10, "name": "doggie", "category": {"id": 1, "name": "Dogs"}, "photoUrls": []}
+        application/x-www-form-urlencoded: {"id": 10, "name": "doggie", "category": {"id": 1, "name": "Dogs"}, "photoUrls": ["<value 1>", "<value 2>", "<value 3>"]}
       responses:
         "200":
-          application/json: {"id": 10, "name": "doggie", "category": {"id": 1, "name": "Dogs"}, "photoUrls": ["<value>", "<value>", "<value>"]}
-          application/xml: "0xc4d65Fa0E6"
+          application/json: {"id": 10, "name": "doggie", "category": {"id": 1, "name": "Dogs"}, "photoUrls": ["<value 1>"]}
+          application/xml: "0xE8DAbC9D9F"
   findPetsByStatus:
     speakeasy-default-find-pets-by-status:
       parameters:
@@ -287,44 +289,44 @@ examples:
           status: "available"
       responses:
         "200":
-          application/json: [{"id": 10, "name": "doggie", "category": {"id": 1, "name": "Dogs"}, "photoUrls": []}, {"id": 10, "name": "doggie", "category": {"id": 1, "name": "Dogs"}, "photoUrls": ["<value>"]}, {"id": 10, "name": "doggie", "category": {"id": 1, "name": "Dogs"}, "photoUrls": []}]
-          application/xml: "0xB0a632543C"
+          application/json: [{"id": 10, "name": "doggie", "category": {"id": 1, "name": "Dogs"}, "photoUrls": []}, {"id": 10, "name": "doggie", "category": {"id": 1, "name": "Dogs"}, "photoUrls": []}]
+          application/xml: "0x3DA625dd77"
   findPetsByTags:
     speakeasy-default-find-pets-by-tags:
       responses:
         "200":
-          application/json: [{"id": 10, "name": "doggie", "category": {"id": 1, "name": "Dogs"}, "photoUrls": ["<value>", "<value>", "<value>"]}]
-          application/xml: "0xfbAC3e8bD9"
+          application/json: [{"id": 10, "name": "doggie", "category": {"id": 1, "name": "Dogs"}, "photoUrls": ["<value 1>", "<value 2>"]}]
+          application/xml: "0x8a2c95b0C6"
   getPetById:
     speakeasy-default-get-pet-by-id:
       parameters:
         path:
-          petId: 504151
+          petId: 311674
       responses:
         "200":
-          application/json: {"id": 10, "name": "doggie", "category": {"id": 1, "name": "Dogs"}, "photoUrls": []}
-          application/xml: "0xb23Cfd42BB"
+          application/json: {"id": 10, "name": "doggie", "category": {"id": 1, "name": "Dogs"}, "photoUrls": ["<value 1>"]}
+          application/xml: "0xA56e4AaE8e"
   updatePetWithForm:
     speakeasy-default-update-pet-with-form:
       parameters:
         path:
-          petId: 303241
+          petId: 509712
         query: {}
       responses:
         "200":
-          application/json: {"id": 10, "name": "doggie", "category": {"id": 1, "name": "Dogs"}, "photoUrls": ["<value>", "<value>", "<value>"]}
-          application/xml: "0x6dD3f6B027"
+          application/json: {"id": 10, "name": "doggie", "category": {"id": 1, "name": "Dogs"}, "photoUrls": ["<value 1>"]}
+          application/xml: "0xff9aaf45cD"
   deletePet:
     speakeasy-default-delete-pet:
       parameters:
         path:
-          petId: 441876
+          petId: 818965
         header: {}
   uploadFile:
     speakeasy-default-upload-file:
       parameters:
         path:
-          petId: 565380
+          petId: 150516
         query: {}
       responses:
         "200":
@@ -333,7 +335,7 @@ examples:
     speakeasy-default-get-inventory:
       responses:
         "200":
-          application/json: {"key": 373538, "key1": 961069}
+          application/json: {"key": 111959, "key1": 333452, "key2": 973245}
   placeOrder:
     speakeasy-default-place-order:
       requestBody:
@@ -355,16 +357,16 @@ examples:
     speakeasy-default-get-order-by-id:
       parameters:
         path:
-          orderId: 614993
+          orderId: 728529
       responses:
         "200":
           application/json: {"id": 10, "petId": 198772, "quantity": 7, "status": "approved"}
-          application/xml: "0x51EB64dCdd"
+          application/xml: "0xa91CABa7bf"
   deleteOrder:
     speakeasy-default-delete-order:
       parameters:
         path:
-          orderId: 127902
+          orderId: 690575
   createUser:
     speakeasy-default-create-user:
       requestBody:
@@ -372,27 +374,27 @@ examples:
       responses:
         "200":
           application/json: {"id": 10, "username": "theUser", "firstName": "John", "lastName": "James", "email": "john@email.com", "password": "12345", "phone": "12345", "userStatus": 1}
-          application/xml: "0xb41a2f5C3F"
+          application/xml: "0x400A6EF4FE"
     speakeasy-default-create-user-raw:
       responses:
         "200":
           application/json: {"id": 10, "username": "theUser", "firstName": "John", "lastName": "James", "email": "john@email.com", "password": "12345", "phone": "12345", "userStatus": 1}
-          application/xml: "0xBdBEe6E5bE"
+          application/xml: "0x400A6EF4FE"
     speakeasy-default-create-user-form:
       requestBody:
         application/x-www-form-urlencoded: {"id": 10, "username": "theUser", "firstName": "John", "lastName": "James", "email": "john@email.com", "password": "12345", "phone": "12345", "userStatus": 1}
       responses:
         "200":
           application/json: {"id": 10, "username": "theUser", "firstName": "John", "lastName": "James", "email": "john@email.com", "password": "12345", "phone": "12345", "userStatus": 1}
-          application/xml: "0xcBc71Bde80"
+          application/xml: "0x400A6EF4FE"
   createUsersWithListInput:
     speakeasy-default-create-users-with-list-input:
       requestBody:
-        application/json: [{"id": 10, "username": "theUser", "firstName": "John", "lastName": "James", "email": "john@email.com", "password": "12345", "phone": "12345", "userStatus": 1}]
+        application/json: [{"id": 10, "username": "theUser", "firstName": "John", "lastName": "James", "email": "john@email.com", "password": "12345", "phone": "12345", "userStatus": 1}, {"id": 10, "username": "theUser", "firstName": "John", "lastName": "James", "email": "john@email.com", "password": "12345", "phone": "12345", "userStatus": 1}, {"id": 10, "username": "theUser", "firstName": "John", "lastName": "James", "email": "john@email.com", "password": "12345", "phone": "12345", "userStatus": 1}]
       responses:
         "200":
           application/json: {"id": 10, "username": "theUser", "firstName": "John", "lastName": "James", "email": "john@email.com", "password": "12345", "phone": "12345", "userStatus": 1}
-          application/xml: "0xC0b2D5cEE7"
+          application/xml: "0x4DDd4Ff16C"
   loginUser:
     speakeasy-default-login-user:
       responses:
@@ -404,32 +406,32 @@ examples:
     speakeasy-default-get-user-by-name:
       parameters:
         path:
-          username: "Zachery_Lubowitz15"
+          username: "Edyth10"
       responses:
         "200":
           application/json: {"id": 10, "username": "theUser", "firstName": "John", "lastName": "James", "email": "john@email.com", "password": "12345", "phone": "12345", "userStatus": 1}
-          application/xml: "0xb60ad6AdFe"
+          application/xml: "0x4Fdf7986a7"
   updateUser:
     speakeasy-default-update-user:
       parameters:
         path:
-          username: "Dandre_Hand41"
+          username: "Alison.Cassin"
       requestBody:
         application/json: {"id": 10, "username": "theUser", "firstName": "John", "lastName": "James", "email": "john@email.com", "password": "12345", "phone": "12345", "userStatus": 1}
     speakeasy-default-update-user-raw:
       parameters:
         path:
-          username: "Maximus_Gulgowski38"
+          username: "Alison.Cassin"
     speakeasy-default-update-user-form:
       parameters:
         path:
-          username: "Bo.Beatty-Mraz90"
+          username: "Alison.Cassin"
       requestBody:
         application/x-www-form-urlencoded: {"id": 10, "username": "theUser", "firstName": "John", "lastName": "James", "email": "john@email.com", "password": "12345", "phone": "12345", "userStatus": 1}
   deleteUser:
     speakeasy-default-delete-user:
       parameters:
         path:
-          username: "Demetris_Schmitt"
-examplesVersion: 1.0.1
+          username: "Rita_Schuppe"
+examplesVersion: 1.0.2
 generatedTests: {}
