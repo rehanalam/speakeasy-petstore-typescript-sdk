@@ -1,12 +1,12 @@
 lockVersion: 2.0.0
 id: 507eea1e-404e-4394-a27b-45491b412b02
 management:
-  docChecksum: aa4343909131464e06579cb79d623f0e
+  docChecksum: 6094029b00dda606391fe7336ba8ce39
   docVersion: 1.0.26
   speakeasyVersion: 1.546.2
   generationVersion: 2.604.4
-  releaseVersion: 0.1.6
-  configChecksum: db4bdc90d8626d5fc22245e29aae20fb
+  releaseVersion: 0.1.7
+  configChecksum: d8a3a716bb65d4bb6ce1948eb1e4ea90
   repoURL: https://github.com/rehanalam/speakeasy-petstore-typescript-sdk.git
   installationURL: https://github.com/rehanalam/speakeasy-petstore-typescript-sdk
 features:
