@@ -17,7 +17,7 @@ Developer-friendly & type-safe Typescript SDK specifically catered to leverage *
 <!-- Start Summary [summary] -->
 ## Summary
 
-Swagger Petstore - OpenAPI 4.0: This is a sample Pet Store Server based on the OpenAPI 3.0 specification.  You can find out more about
+Updated Swagger Petstore - OpenAPI 3.0: This is a sample Pet Store Server based on the OpenAPI 3.0 specification.  You can find out more about
 Swagger at [https://swagger.io](https://swagger.io). In the third iteration of the pet store, we've switched to the design first approach!
 You can now help us improve the API whether it's by making changes to the definition itself or to the code.
 That way, with time, we can improve the API in general, and expose some of the new features in OAS3.
@@ -208,7 +208,6 @@ async function run() {
     ],
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -250,7 +249,6 @@ async function run() {
     ],
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -273,7 +271,6 @@ async function run() {
     petId: 311674,
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -405,10 +402,13 @@ const petstore = new Petstore({
 
 async function run() {
   const result = await petstore.pets.updateRaw(
-    bytesToStream(new TextEncoder().encode("0x8359625Dfb")),
+    bytesToStream(
+      new TextEncoder().encode(
+        "{\"id\":10,\"name\":\"doggie\",\"category\":{\"id\":1,\"name\":\"Dogs\"},\"photoUrls\":[\"<value 1>\"]}",
+      ),
+    ),
   );
 
-  // Handle the result
   console.log(result);
 }
 
@@ -455,7 +455,6 @@ async function run() {
     },
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -495,7 +494,6 @@ async function run() {
     ],
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -507,15 +505,20 @@ run();
 <!-- Start Error Handling [errors] -->
 ## Error Handling
 
-If the request fails due to, for example 4XX or 5XX status codes, it will throw a `APIError`.
+[`PetstoreError`](./src/models/errors/petstoreerror.ts) is the base class for all HTTP error responses. It has the following properties:
 
-| Error Type      | Status Code | Content Type |
-| --------------- | ----------- | ------------ |
-| errors.APIError | 4XX, 5XX    | \*/\*        |
+| Property            | Type       | Description                                            |
+| ------------------- | ---------- | ------------------------------------------------------ |
+| `error.message`     | `string`   | Error message                                          |
+| `error.statusCode`  | `number`   | HTTP response status code eg `404`                     |
+| `error.headers`     | `Headers`  | HTTP response headers                                  |
+| `error.body`        | `string`   | HTTP body. Can be empty string if no body is returned. |
+| `error.rawResponse` | `Response` | Raw HTTP response                                      |
 
+### Example
 ```typescript
 import { Petstore } from "petstore";
-import { SDKValidationError } from "petstore/models/errors";
+import * as errors from "petstore/models/errors";
 
 const petstore = new Petstore({
   serverURL: "https://api.example.com",
@@ -523,9 +526,8 @@ const petstore = new Petstore({
 });
 
 async function run() {
-  let result;
   try {
-    result = await petstore.pets.update({
+    const result = await petstore.pets.update({
       id: 10,
       name: "doggie",
       category: {
@@ -537,30 +539,13 @@ async function run() {
       ],
     });
 
-    // Handle the result
     console.log(result);
-  } catch (err) {
-    switch (true) {
-      // The server response does not match the expected SDK schema
-      case (err instanceof SDKValidationError):
-        {
-          // Pretty-print will provide a human-readable multi-line error message
-          console.error(err.pretty());
-          // Raw value may also be inspected
-          console.error(err.rawValue);
-          return;
-        }
-        apierror.js;
-      // Server returned an error status code or an unknown content type
-      case (err instanceof APIError): {
-        console.error(err.statusCode);
-        console.error(err.rawResponse.body);
-        return;
-      }
-      default: {
-        // Other errors such as network errors, see HTTPClientErrors for more details
-        throw err;
-      }
+  } catch (error) {
+    if (error instanceof errors.PetstoreError) {
+      console.log(error.message);
+      console.log(error.statusCode);
+      console.log(error.body);
+      console.log(error.headers);
     }
   }
 }
@@ -569,17 +554,26 @@ run();
 
 ```
 
-Validation errors can also occur when either method arguments or data returned from the server do not match the expected format. The `SDKValidationError` that is thrown as a result will capture the raw value that failed validation in an attribute called `rawValue`. Additionally, a `pretty()` method is available on this error that can be used to log a nicely formatted multi-line string since validation errors can list many issues and the plain error string may be difficult read when debugging.
+### Error Classes
+**Primary error:**
+* [`PetstoreError`](./src/models/errors/petstoreerror.ts): The base class for HTTP error responses.
 
-In some rare cases, the SDK can fail to get a response from the server or even make the request due to unexpected circumstances such as network conditions. These types of errors are captured in the `models/errors/httpclienterrors.ts` module:
+<details><summary>Less common errors (6)</summary>
 
-| HTTP Client Error                                    | Description                                          |
-| ---------------------------------------------------- | ---------------------------------------------------- |
-| RequestAbortedError                                  | HTTP request was aborted by the client               |
-| RequestTimeoutError                                  | HTTP request timed out due to an AbortSignal signal  |
-| ConnectionError                                      | HTTP client was unable to make a request to a server |
-| InvalidRequestError                                  | Any input used to create a request is invalid        |
-| UnexpectedClientError                                | Unrecognised or unexpected error                     |
+<br />
+
+**Network errors:**
+* [`ConnectionError`](./src/models/errors/httpclienterrors.ts): HTTP client was unable to make a request to a server.
+* [`RequestTimeoutError`](./src/models/errors/httpclienterrors.ts): HTTP request timed out due to an AbortSignal signal.
+* [`RequestAbortedError`](./src/models/errors/httpclienterrors.ts): HTTP request was aborted by the client.
+* [`InvalidRequestError`](./src/models/errors/httpclienterrors.ts): Any input used to create a request is invalid.
+* [`UnexpectedClientError`](./src/models/errors/httpclienterrors.ts): Unrecognised or unexpected error.
+
+
+**Inherit from [`PetstoreError`](./src/models/errors/petstoreerror.ts)**:
+* [`ResponseValidationError`](./src/models/errors/responsevalidationerror.ts): Type mismatch between the data returned from the server and the structure expected by the SDK. See `error.rawValue` for the raw value and `error.pretty()` for a nicely formatted multi-line string.
+
+</details>
 <!-- End Error Handling [errors] -->
 
 <!-- Start Custom HTTP Client [http-client] -->

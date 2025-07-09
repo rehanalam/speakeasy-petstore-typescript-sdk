@@ -8,7 +8,9 @@ import { LoginUserResponse } from "petstore/models/operations";
 let value: LoginUserResponse = {
   headers: {
     "key": [
-      "<value>",
+      "<value 1>",
+      "<value 2>",
+      "<value 3>",
     ],
   },
   result: "<value>",

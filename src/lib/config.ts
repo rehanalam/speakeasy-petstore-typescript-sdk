@@ -27,6 +27,10 @@ export type SDKOptions = {
    */
   serverURL: string;
   /**
+   * Allows overriding the default user agent used by the SDK
+   */
+  userAgent?: string | undefined;
+  /**
    * Allows overriding the default retry config used by the SDK
    */
   retryConfig?: RetryConfig;
@@ -54,7 +58,7 @@ export function serverURLFromOptions(options: SDKOptions): URL | null {
 export const SDK_METADATA = {
   language: "typescript",
   openapiDocVersion: "1.0.26",
-  sdkVersion: "0.1.6",
-  genVersion: "2.604.4",
-  userAgent: "speakeasy-sdk/typescript 0.1.6 2.604.4 1.0.26 petstore",
+  sdkVersion: "0.2.0",
+  genVersion: "2.654.2",
+  userAgent: "speakeasy-sdk/typescript 0.2.0 2.654.2 1.0.26 petstore",
 } as const;

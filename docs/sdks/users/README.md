@@ -43,7 +43,6 @@ async function run() {
     userStatus: 1,
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -76,15 +75,12 @@ async function run() {
     phone: "12345",
     userStatus: 1,
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("usersCreate failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -124,9 +120,8 @@ const petstore = new Petstore({
 });
 
 async function run() {
-  const result = await petstore.users.createRaw(bytesToStream(new TextEncoder().encode("0x400A6EF4FE")));
+  const result = await petstore.users.createRaw(bytesToStream(new TextEncoder().encode("{\"id\":10,\"username\":\"theUser\",\"firstName\":\"John\",\"lastName\":\"James\",\"email\":\"john@email.com\",\"password\":\"12345\",\"phone\":\"12345\",\"userStatus\":1}")));
 
-  // Handle the result
   console.log(result);
 }
 
@@ -149,16 +144,13 @@ const petstore = new PetstoreCore({
 });
 
 async function run() {
-  const res = await usersCreateRaw(petstore, bytesToStream(new TextEncoder().encode("0x372Cd02E61")));
-
-  if (!res.ok) {
-    throw res.error;
+  const res = await usersCreateRaw(petstore, bytesToStream(new TextEncoder().encode("{\"id\":10,\"username\":\"theUser\",\"firstName\":\"John\",\"lastName\":\"James\",\"email\":\"john@email.com\",\"password\":\"12345\",\"phone\":\"12345\",\"userStatus\":1}")));
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("usersCreateRaw failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -209,7 +201,6 @@ async function run() {
     userStatus: 1,
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -242,15 +233,12 @@ async function run() {
     phone: "12345",
     userStatus: 1,
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("usersCreateForm failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -323,7 +311,6 @@ async function run() {
     },
   ]);
 
-  // Handle the result
   console.log(result);
 }
 
@@ -378,15 +365,12 @@ async function run() {
       userStatus: 1,
     },
   ]);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("usersCreateFromList failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -428,7 +412,6 @@ const petstore = new Petstore({
 async function run() {
   const result = await petstore.users.login({});
 
-  // Handle the result
   console.log(result);
 }
 
@@ -452,15 +435,12 @@ const petstore = new PetstoreCore({
 
 async function run() {
   const res = await usersLogin(petstore, {});
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("usersLogin failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -525,14 +505,12 @@ const petstore = new PetstoreCore({
 
 async function run() {
   const res = await usersLogout(petstore);
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    
+  } else {
+    console.log("usersLogout failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  
 }
 
 run();
@@ -575,7 +553,6 @@ async function run() {
     username: "Edyth10",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -601,15 +578,12 @@ async function run() {
   const res = await usersGetByName(petstore, {
     username: "Edyth10",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("usersGetByName failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -698,14 +672,12 @@ async function run() {
       userStatus: 1,
     },
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    
+  } else {
+    console.log("usersUpdate failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  
 }
 
 run();
@@ -747,7 +719,7 @@ const petstore = new Petstore({
 async function run() {
   await petstore.users.updateRaw({
     username: "Alison.Cassin",
-    user: bytesToStream(new TextEncoder().encode("0x0b25377dFA")),
+    user: bytesToStream(new TextEncoder().encode("{\"id\":10,\"username\":\"theUser\",\"firstName\":\"John\",\"lastName\":\"James\",\"email\":\"john@email.com\",\"password\":\"12345\",\"phone\":\"12345\",\"userStatus\":1}")),
   });
 
 
@@ -774,16 +746,14 @@ const petstore = new PetstoreCore({
 async function run() {
   const res = await usersUpdateRaw(petstore, {
     username: "Alison.Cassin",
-    user: bytesToStream(new TextEncoder().encode("0xcFa21b55fb")),
+    user: bytesToStream(new TextEncoder().encode("{\"id\":10,\"username\":\"theUser\",\"firstName\":\"John\",\"lastName\":\"James\",\"email\":\"john@email.com\",\"password\":\"12345\",\"phone\":\"12345\",\"userStatus\":1}")),
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    
+  } else {
+    console.log("usersUpdateRaw failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  
 }
 
 run();
@@ -872,14 +842,12 @@ async function run() {
       userStatus: 1,
     },
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    
+  } else {
+    console.log("usersUpdateForm failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  
 }
 
 run();
@@ -948,14 +916,12 @@ async function run() {
   const res = await usersDelete(petstore, {
     username: "Rita_Schuppe",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    
+  } else {
+    console.log("usersDelete failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  
 }
 
 run();

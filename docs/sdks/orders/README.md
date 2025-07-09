@@ -33,7 +33,6 @@ async function run() {
     status: "approved",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -62,15 +61,12 @@ async function run() {
     quantity: 7,
     status: "approved",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("ordersPlace failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -110,9 +106,8 @@ const petstore = new Petstore({
 });
 
 async function run() {
-  const result = await petstore.orders.placeRaw(bytesToStream(new TextEncoder().encode("0x45eC5A0D9E")));
+  const result = await petstore.orders.placeRaw(bytesToStream(new TextEncoder().encode("{\"id\":10,\"petId\":198772,\"quantity\":7,\"status\":\"approved\"}")));
 
-  // Handle the result
   console.log(result);
 }
 
@@ -135,16 +130,13 @@ const petstore = new PetstoreCore({
 });
 
 async function run() {
-  const res = await ordersPlaceRaw(petstore, bytesToStream(new TextEncoder().encode("0x06B99d7206")));
-
-  if (!res.ok) {
-    throw res.error;
+  const res = await ordersPlaceRaw(petstore, bytesToStream(new TextEncoder().encode("{\"id\":10,\"petId\":198772,\"quantity\":7,\"status\":\"approved\"}")));
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("ordersPlaceRaw failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -191,7 +183,6 @@ async function run() {
     status: "approved",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -220,15 +211,12 @@ async function run() {
     quantity: 7,
     status: "approved",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("ordersPlaceForm failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -272,7 +260,6 @@ async function run() {
     orderId: 728529,
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -298,15 +285,12 @@ async function run() {
   const res = await ordersGetById(petstore, {
     orderId: 728529,
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("ordersGetById failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -375,14 +359,12 @@ async function run() {
   const res = await ordersDelete(petstore, {
     orderId: 690575,
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    
+  } else {
+    console.log("ordersDelete failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  
 }
 
 run();

@@ -14,7 +14,9 @@ const value: components.Pet = {
     name: "Dogs",
   },
   photoUrls: [
-    "<value>",
+    "<value 1>",
+    "<value 2>",
+    "<value 3>",
   ],
 };
 ```
