@@ -45,7 +45,6 @@ async function run() {
     ],
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -79,15 +78,12 @@ async function run() {
       "<value 1>",
     ],
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("petsUpdate failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -127,9 +123,8 @@ const petstore = new Petstore({
 });
 
 async function run() {
-  const result = await petstore.pets.updateRaw(bytesToStream(new TextEncoder().encode("0x8359625Dfb")));
+  const result = await petstore.pets.updateRaw(bytesToStream(new TextEncoder().encode("{\"id\":10,\"name\":\"doggie\",\"category\":{\"id\":1,\"name\":\"Dogs\"},\"photoUrls\":[\"<value 1>\"]}")));
 
-  // Handle the result
   console.log(result);
 }
 
@@ -152,16 +147,13 @@ const petstore = new PetstoreCore({
 });
 
 async function run() {
-  const res = await petsUpdateRaw(petstore, bytesToStream(new TextEncoder().encode("0x4fB0F8ce78")));
-
-  if (!res.ok) {
-    throw res.error;
+  const res = await petsUpdateRaw(petstore, bytesToStream(new TextEncoder().encode("{\"id\":10,\"name\":\"doggie\",\"category\":{\"id\":1,\"name\":\"Dogs\"},\"photoUrls\":[\"<value 1>\"]}")));
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("petsUpdateRaw failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -213,7 +205,6 @@ async function run() {
     ],
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -247,15 +238,12 @@ async function run() {
       "<value 1>",
     ],
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("petsUpdateForm failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -309,7 +297,6 @@ async function run() {
     ],
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -345,15 +332,12 @@ async function run() {
       "<value 3>",
     ],
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("petsAdd failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -393,9 +377,8 @@ const petstore = new Petstore({
 });
 
 async function run() {
-  const result = await petstore.pets.addRaw(bytesToStream(new TextEncoder().encode("0xE8DAbC9D9F")));
+  const result = await petstore.pets.addRaw(bytesToStream(new TextEncoder().encode("{\"id\":10,\"name\":\"doggie\",\"category\":{\"id\":1,\"name\":\"Dogs\"},\"photoUrls\":[\"<value 1>\",\"<value 2>\",\"<value 3>\"]}")));
 
-  // Handle the result
   console.log(result);
 }
 
@@ -418,16 +401,13 @@ const petstore = new PetstoreCore({
 });
 
 async function run() {
-  const res = await petsAddRaw(petstore, bytesToStream(new TextEncoder().encode("0xFFb93bfD76")));
-
-  if (!res.ok) {
-    throw res.error;
+  const res = await petsAddRaw(petstore, bytesToStream(new TextEncoder().encode("{\"id\":10,\"name\":\"doggie\",\"category\":{\"id\":1,\"name\":\"Dogs\"},\"photoUrls\":[\"<value 1>\",\"<value 2>\",\"<value 3>\"]}")));
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("petsAddRaw failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -481,7 +461,6 @@ async function run() {
     ],
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -517,15 +496,12 @@ async function run() {
       "<value 3>",
     ],
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("petsAddForm failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -567,7 +543,6 @@ const petstore = new Petstore({
 async function run() {
   const result = await petstore.pets.findByStatus({});
 
-  // Handle the result
   console.log(result);
 }
 
@@ -591,15 +566,12 @@ const petstore = new PetstoreCore({
 
 async function run() {
   const res = await petsFindByStatus(petstore, {});
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("petsFindByStatus failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -641,7 +613,6 @@ const petstore = new Petstore({
 async function run() {
   const result = await petstore.pets.findByTags({});
 
-  // Handle the result
   console.log(result);
 }
 
@@ -665,15 +636,12 @@ const petstore = new PetstoreCore({
 
 async function run() {
   const res = await petsFindByTags(petstore, {});
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("petsFindByTags failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -718,7 +686,6 @@ async function run() {
     petId: 311674,
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -745,15 +712,12 @@ async function run() {
   }, {
     petId: 311674,
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("petsGetById failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -798,7 +762,6 @@ async function run() {
     petId: 509712,
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -824,15 +787,12 @@ async function run() {
   const res = await petsUpdateWithForm(petstore, {
     petId: 509712,
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("petsUpdateWithForm failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
@@ -901,14 +861,12 @@ async function run() {
   const res = await petsDelete(petstore, {
     petId: 818965,
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    
+  } else {
+    console.log("petsDelete failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  
 }
 
 run();
@@ -952,7 +910,6 @@ async function run() {
     petId: 150516,
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -978,15 +935,12 @@ async function run() {
   const res = await petsUploadImage(petstore, {
     petId: 150516,
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("petsUploadImage failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();

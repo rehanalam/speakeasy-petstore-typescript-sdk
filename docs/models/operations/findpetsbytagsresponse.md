@@ -6,19 +6,7 @@
 ### `components.Pet[]`
 
 ```typescript
-const value: components.Pet[] = [
-  {
-    id: 10,
-    name: "doggie",
-    category: {
-      id: 1,
-      name: "Dogs",
-    },
-    photoUrls: [
-      "<value>",
-    ],
-  },
-];
+const value: components.Pet[] = [];
 ```
 
 ### `Uint8Array`

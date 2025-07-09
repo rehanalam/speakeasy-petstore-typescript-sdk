@@ -7,16 +7,6 @@ import { UpdateUserRequest } from "petstore/models/operations";
 
 let value: UpdateUserRequest = {
   username: "Dortha_Hoeger59",
-  user: {
-    id: 10,
-    username: "theUser",
-    firstName: "John",
-    lastName: "James",
-    email: "john@email.com",
-    password: "12345",
-    phone: "12345",
-    userStatus: 1,
-  },
 };
 ```
 

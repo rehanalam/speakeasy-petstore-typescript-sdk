@@ -1,20 +1,20 @@
 lockVersion: 2.0.0
 id: 507eea1e-404e-4394-a27b-45491b412b02
 management:
-  docChecksum: aa4343909131464e06579cb79d623f0e
+  docChecksum: 3a58cff83a449928f9b9fb3aa28f12f2
   docVersion: 1.0.26
-  speakeasyVersion: 1.546.2
-  generationVersion: 2.604.4
-  releaseVersion: 0.1.6
-  configChecksum: db4bdc90d8626d5fc22245e29aae20fb
+  speakeasyVersion: 1.580.0
+  generationVersion: 2.654.2
+  releaseVersion: 0.2.0
+  configChecksum: a34d9898575a4bab8a0ee5a53d868eae
   repoURL: https://github.com/rehanalam/speakeasy-petstore-typescript-sdk.git
   installationURL: https://github.com/rehanalam/speakeasy-petstore-typescript-sdk
 features:
   typescript:
     acceptHeaders: 2.81.2
     additionalDependencies: 0.1.0
-    constsAndDefaults: 0.1.11
-    core: 3.21.8
+    constsAndDefaults: 0.1.12
+    core: 3.21.13
     defaultEnabledRetries: 0.1.0
     devContainers: 2.90.0
     enumUnions: 0.1.0
@@ -24,12 +24,12 @@ features:
     globalSecurityFlattening: 0.1.0
     globalServerURLs: 2.82.5
     groups: 2.81.2
-    mcpServer: 0.9.2
+    mcpServer: 0.9.3
     methodSecurity: 2.82.6
     nameOverrides: 2.81.2
     responseFormat: 0.2.3
     retries: 2.83.0
-    sdkHooks: 0.2.0
+    sdkHooks: 0.3.0
     uploadStreams: 0.1.0
 generatedFiles:
   - .devcontainer/README.md
@@ -91,6 +91,10 @@ generatedFiles:
   - docs/sdks/store/README.md
   - docs/sdks/users/README.md
   - eslint.config.mjs
+  - examples/.env.template
+  - examples/README.md
+  - examples/package.json
+  - examples/petsUpdate.example.ts
   - jsr.json
   - package.json
   - src/core.ts
@@ -194,6 +198,8 @@ generatedFiles:
   - src/models/errors/apierror.ts
   - src/models/errors/httpclienterrors.ts
   - src/models/errors/index.ts
+  - src/models/errors/petstoreerror.ts
+  - src/models/errors/responsevalidationerror.ts
   - src/models/errors/sdkvalidationerror.ts
   - src/models/operations/addpet.ts
   - src/models/operations/addpetform.ts

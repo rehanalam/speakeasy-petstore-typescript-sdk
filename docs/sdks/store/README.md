@@ -30,7 +30,6 @@ async function run() {
     apiKey: process.env["PETSTORE_API_KEY"] ?? "",
   });
 
-  // Handle the result
   console.log(result);
 }
 
@@ -55,15 +54,12 @@ async function run() {
   const res = await storeGetInventory(petstore, {
     apiKey: process.env["PETSTORE_API_KEY"] ?? "",
   });
-
-  if (!res.ok) {
-    throw res.error;
+  if (res.ok) {
+    const { value: result } = res;
+    console.log(result);
+  } else {
+    console.log("storeGetInventory failed:", res.error);
   }
-
-  const { value: result } = res;
-
-  // Handle the result
-  console.log(result);
 }
 
 run();
